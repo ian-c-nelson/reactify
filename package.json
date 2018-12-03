@@ -4,7 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "bcryptjs": "^2.4.3",
+    "express": "^4.16.4",
+    "jwt-simple": "^0.5.5",
+    "mongoose": "^5.3.14",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
   },
   "_comments": [
     ""
@@ -13,6 +19,7 @@
     "prestart": "yarn client:build",
     "start": "node server.js",
     "dev": "concurrently --kill-others \"yarn server:dev\" \"yarn client:start\"",
+    "server:start": "node server.js",
     "server:dev": "nodemon server.js",
     "client:start": "cd app && yarn start",
     "client:build": "cd app && yarn build"
