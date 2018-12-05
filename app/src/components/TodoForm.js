@@ -1,5 +1,5 @@
 import React from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 function TodoForm(props){
   console.log(props);
@@ -7,7 +7,7 @@ function TodoForm(props){
   return (
     <div>
       <p>{props.count}</p>
-      <button onClick={props.increaseCount}> Increment </button>
+      <button onClick={props.burrito}> Increment </button>
       <hr/>
     </div>
   );
@@ -15,7 +15,7 @@ function TodoForm(props){
 
 const mapStateToProps = ({count}) => ({count});
 const mapDispatchToProps = (dispatch) => ({
-    increaseCount(){ 
+    burrito(){ 
       dispatch({type: "INCREASE_COUNT"})
     }
 });

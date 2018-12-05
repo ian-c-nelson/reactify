@@ -5,6 +5,7 @@ import { createStore } from "redux";
 
 import Navbar from "./components/common/Navbar";
 import TodoForm from "./components/TodoForm";
+import Hook from "./components/Hook";
 
 import rootReducer from "./reducers";
 
@@ -21,8 +22,7 @@ class App extends Component {
           <Navbar />
           <Router>
             <Switch>
-              <Route path="/" exact component={TodoForm} />
-              <Route path="/test" exact component={Test} />
+              <Route path="/" exact component={Hook} />
             </Switch>
           </Router>
         </div>
