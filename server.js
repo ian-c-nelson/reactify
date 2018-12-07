@@ -22,4 +22,6 @@ app.use(require("./routes"));
 
 app.listen(PORT, function(){
     console.log(`App listening on PORT ${PORT}`);
+    console.log(`Dev app url https://localhost:${PORT}/`)
+    console.log(`Dev api url https://localhost:${PORT}/`)
 });
