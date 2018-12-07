@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
+// Components
 import Navbar from "./components/common/Navbar";
-import TodoForm from "./components/TodoForm";
-import Hook from "./components/Hook";
+import ModalController from "./components/modals";
 
 import rootReducer from "./reducers";
 
@@ -19,24 +19,18 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
-          <Navbar />
           <Router>
-            <Switch>
-              <Route path="/" exact component={Hook} />
-            </Switch>
+            <div>
+              <Navbar />
+              <Switch>
+              </Switch>
+            </div>
           </Router>
+          <ModalController />
         </div>
       </Provider>
     );
   }
-}
-
-function Hello() {
-  return <p>Hello!</p>;
-}
-
-function Test() {
-  return <p>Test!</p>;
 }
 
 export default App;
