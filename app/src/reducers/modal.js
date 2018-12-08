@@ -1,4 +1,4 @@
-const initialState = "LoginModal";
+const initialState = "";
 
 const modal = (state = initialState, action) => {
   switch (action.type) {
