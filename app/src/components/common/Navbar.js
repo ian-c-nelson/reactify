@@ -29,7 +29,7 @@ function Navbar(props) {
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="buttons">
-            <button className="button is-primary">
+            <button onClick={props.signUpModal}className="button is-primary">
               <strong>Sign up</strong>
             </button>
             <button onClick={props.loginModal} className="button is-light">Log in</button>
@@ -45,6 +45,9 @@ function mapDispatchToProps(dispatch) {
   return {
     loginModal() {
       dispatch(toggleModal("LoginModal"));
+    },
+    signUpModal(){
+      dispatch(toggleModal("SignUpModal"));
     }
   }
 }

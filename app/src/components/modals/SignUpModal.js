@@ -1,22 +1,21 @@
-import React, {useState} from "react";
-import Axios from "axios";
-
+import React, { useState } from "react";
 import Modal from "./Modal";
 import { Card, Header, Content } from "../common/Bulma/Card";
 
-function LoginModal(props) {
+function SignUpModal(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rePassword, setRePassword] = useState("");
 
   return (
     <Modal>
       <Card>
-        <Header>Login!</Header>
+        <Header>Create an Account!</Header>
         <Content>
           <div className="field">
             <label className="label" htmlFor="email">Email</label>
-            <input 
-              placeholder="burrito@taco.com" 
+            <input
+              placeholder="burrito@taco.com"
               className="input"
               name="email"
               value={email}
@@ -25,16 +24,30 @@ function LoginModal(props) {
           </div>
           <div className="field">
             <label className="label" htmlFor="password">Password</label>
-            <input 
-              placeholder="Secret Sauce" 
+            <input
+              placeholder="Secret Sauce"
               className="input"
               name="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
               type="password" />
           </div>
+          <div className="field">
+            <label className="label" htmlFor="rePassword">Re Enter Password</label>
+            <input
+              placeholder="Gotta Double Dip"
+              className="input"
+              name="rePassword"
+              value={rePassword}
+              onChange={e => setRePassword(e.target.value)}
+              type="password" />
+          </div>
           <div className="has-text-right">
-            <button className="button is-primary">Login</button>
+            <button
+              onClick={props.closeModal}
+              className="button is-primary"
+            >Cancel</button>
+            <button className="button is-primary">Sign Up</button>
           </div>
         </Content>
       </Card>
@@ -42,4 +55,4 @@ function LoginModal(props) {
   );
 }
 
-export default (LoginModal);
+export default SignUpModal;

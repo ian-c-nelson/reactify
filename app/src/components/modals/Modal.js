@@ -5,13 +5,21 @@ import { toggleModal } from "../../actions";
 function Modal(props) {
   return (
     <div className="modal is-active">
-      <div className="modal-background"></div>
+      <div onClick={props.closeModal} className="modal-background"></div>
       <div className="modal-content">
         {props.children}
       </div>
-      <button onClick={() => props.dispatch(toggleModal())} className="modal-close is-large" aria-label="close"></button>
+      <button onClick={props.closeModal} className="modal-close is-large" aria-label="close"></button>
     </div>
   );
 }
 
-export default connect(null, null)(Modal);
+function mapDispatchToProps(dispatch){
+  return {
+    closeModal(){
+      dispatch(toggleModal())
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Modal);
