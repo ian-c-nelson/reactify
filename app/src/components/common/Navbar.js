@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { toggleModal } from "../../actions";
+import { changeModal } from "../../state/modals/actions";
 import { Link } from "react-router-dom";
 
 function Navbar(props) {
@@ -44,10 +44,10 @@ function Navbar(props) {
 function mapDispatchToProps(dispatch) {
   return {
     loginModal() {
-      dispatch(toggleModal("LoginModal"));
+      dispatch(changeModal("LoginModal"));
     },
     signUpModal(){
-      dispatch(toggleModal("SignUpModal"));
+      dispatch(changeModal("SignUpModal"));
     }
   }
 }

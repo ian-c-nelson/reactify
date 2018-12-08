@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import store from "./state";
 
 // Common Components
 import Navbar from "./components/common/Navbar";
@@ -11,12 +11,6 @@ import ModalController from "./components/modals";
 import Home from "./components/pages/Home";
 import Post from "./components/pages/Post";
 
-import rootReducer from "./reducers";
-
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
 function App(props) {
   return (

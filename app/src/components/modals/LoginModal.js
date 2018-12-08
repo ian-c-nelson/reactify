@@ -1,12 +1,13 @@
-import React, {useState} from "react";
-import Axios from "axios";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { signin } from "../../state/auth/actions";
 
 import Modal from "./Modal";
 import { Card, Header, Content } from "../common/Bulma/Card";
 
 function LoginModal(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("tucker@gmail.com");
+  const [password, setPassword] = useState("kittens");
 
   return (
     <Modal>
@@ -15,8 +16,8 @@ function LoginModal(props) {
         <Content>
           <div className="field">
             <label className="label" htmlFor="email">Email</label>
-            <input 
-              placeholder="burrito@taco.com" 
+            <input
+              placeholder="burrito@taco.com"
               className="input"
               name="email"
               value={email}
@@ -25,8 +26,8 @@ function LoginModal(props) {
           </div>
           <div className="field">
             <label className="label" htmlFor="password">Password</label>
-            <input 
-              placeholder="Secret Sauce" 
+            <input
+              placeholder="Secret Sauce"
               className="input"
               name="password"
               value={password}
@@ -34,7 +35,7 @@ function LoginModal(props) {
               type="password" />
           </div>
           <div className="has-text-right">
-            <button className="button is-primary">Login</button>
+            <button onClick={() => props.dispatch(signin(email, password))} className="button is-primary">Login</button>
           </div>
         </Content>
       </Card>
@@ -42,4 +43,4 @@ function LoginModal(props) {
   );
 }
 
-export default (LoginModal);
+export default connect(null, null)(LoginModal);
