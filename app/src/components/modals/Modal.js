@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { resetModal } from "../../state/modals/actions";
+import { closeModal } from "../../state/modals/actions";
 
 function Modal(props) {
   return (
@@ -17,7 +17,7 @@ function Modal(props) {
 function mapDispatchToProps(dispatch){
   return {
     closeModal(){
-      dispatch(resetModal())
+      dispatch(closeModal())
     }
   }
 }
