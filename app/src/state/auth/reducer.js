@@ -1,17 +1,17 @@
 import { handleActions } from "redux-actions";
 import { 
-  signinReq,
-  signinRes, 
+  signinReq, 
   logoutReq,
-  logoutRes,
   updateAuth,
 } from "./actions";
-import API from "../../utils/API";
 
 const defaultState = {
-  isSignedIn: false,
+  isSignedIn: true,
   token: "",
-  error: ""
+  error: "",
+  user: {
+    name: "Tucker"
+  }
 }
 
 const authReducer = handleActions({

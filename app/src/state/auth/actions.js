@@ -1,7 +1,7 @@
 import { createAction } from "redux-actions";
 import API from "../../utils/API";
 
-// export const signinReq = createAction("SIGNIN_REQ");
+export const signinReq = createAction("SIGNIN_REQ");
 export const logoutReq = createAction("LOGOUT_REQ");
 export const signinRes = createAction("SIGNIN_REQ");
 export const logoutRes = createAction("LOGOUT_REQ");

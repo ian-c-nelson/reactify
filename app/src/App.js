@@ -10,6 +10,7 @@ import ModalController from "./components/modals";
 // Pages
 import Home from "./components/pages/Home";
 import Post from "./components/pages/Post";
+import AuthRoute from "./utils/AuthRoute";
 
 
 function App(props) {
@@ -19,9 +20,10 @@ function App(props) {
         <Router>
           <div>
             <Navbar />
+            <AuthRoute />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/post" component={Post} />
+              <Route exact path="/documentation" component={AuthRoute(Post)} />
             </Switch>
           </div>
         </Router>
