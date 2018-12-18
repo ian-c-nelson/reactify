@@ -16,19 +16,16 @@ import AuthRoute from "./utils/AuthRoute";
 function App(props) {
   return (
     <Provider store={store}>
-      <div>
         <Router>
           <div>
             <Navbar />
-            <AuthRoute />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/documentation" component={AuthRoute(Post)} />
             </Switch>
+            <ModalController />
           </div>
         </Router>
-        <ModalController />
-      </div>
     </Provider>
   );
 }
