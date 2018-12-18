@@ -1,24 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 const RequireAuth = ComposedComponent => {
   class Authentication extends React.Component {
-    static contextTypes = {
-      router: PropTypes.object
-    };
 
     // Check before components
     componentWillMount() {
-      if (!this.props.isSignedIn) {
-        this.context.router.history.push("/");
+      if (!this.props.authenticated) {
+        this.props.history.push("/");
       }
     }
 
     // Compare new props coming in
     componentWillUpdate(nextProps) {
-      if (!this.props.isSignedIn) {
-        this.context.router.history.push("/");
+      if (!this.props.authenticated) {
+        this.props.history.push("/");
       }
     }
 
@@ -29,14 +26,14 @@ const RequireAuth = ComposedComponent => {
 
   const mapStateToProps = state => {
     return {
-      isSignedIn: state.auth.isSignedIn
+      authenticated: state.auth.authenticated
     };
   };
 
   return connect(
     mapStateToProps,
     null
-  )(Authentication);
+  )(withRouter(Authentication));
 };
 
 export default RequireAuth;
