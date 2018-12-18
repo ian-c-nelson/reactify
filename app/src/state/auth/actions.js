@@ -9,6 +9,8 @@ export const updateAuth = createAction("UPDATE_AUTH");
 
 export function signin(email, password) {
   return function(dispatch) {
-    return API.signIn(email, password).then(res => dispatch(updateAuth(res.data)));
+    return API.signIn(email, password).then(res => {
+      dispatch(updateAuth(res.data))
+    }).catch(err => console.log(err));
   }
 }
