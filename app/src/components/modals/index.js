@@ -4,6 +4,7 @@ import LoginModal from "./LoginModal";
 import SignUpModal from "./SignUpModal";
 
 function ModalController(props) {
+  console.log("MODALCONTROLLER PROPS", props);
   switch(props.activeModal){
     case "LoginModal":
       return <LoginModal />;
@@ -16,7 +17,8 @@ function ModalController(props) {
 
 function mapStateToProps(state){
   return {
-    activeModal: state.modal
+    activeModal: state.modal,
+    burrito: state.auth
   }
 }
 

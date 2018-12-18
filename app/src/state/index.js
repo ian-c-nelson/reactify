@@ -2,7 +2,7 @@ import { combineReducers, compose, applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
 // Reducers
-import modal from "./modals/reducer";
+import modal from "./modal/reducer";
 import auth from "./auth/reducer";
 import count from "./count/reducer";
 
