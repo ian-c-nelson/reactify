@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { closeModal } from "../../state/modals/actions";
+import { closeModal } from "../../state/modal/actions";
 
 function Modal(props) {
   return (

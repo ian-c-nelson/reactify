@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { changeModal } from "../../state/modals/actions";
+import { changeModal } from "../../state/modal/actions";
 import { Link } from "react-router-dom";
 
 function Navbar(props) {
