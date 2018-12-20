@@ -6,6 +6,7 @@ Reactify is a simple MERN Stack application that allows an authenticated user to
 
 ## Frontend
 Since this is a MERN application we will be using React on the front end. As well as other useful libraries that compliment React
+
 ### Frontend Libraries
 - Create React App - CLI tools that will structure our react application for us
 - React - A JavaScript library for building user interfaces
@@ -82,6 +83,18 @@ With this structure I will expect my redux store to look like this
 
 #### `utils/`
 `utils/` purpose is for any utilty functions or components!
+
+## Backend
+The backend of this application will be utilizing Mongo and Express, as well as various other middleware and utility packages
+
+### Backend Libraries
+- [bcryptjs](https://www.npmjs.com/package/bcryptjs) - A password hashing function
+- [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv is a zero-dependency module that loads environment variables from a `.env` file into process.env.
+- [express](https://www.npmjs.com/package/express) - Fast, unopinionated, minimalist web framework for node.
+- [jwt-simple](https://www.npmjs.com/package/jwt-simple) - JWT(JSON Web Token) encode and decode module for node.js.
+- [mongoose](https://www.npmjs.com/package/mongoose) - Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+- [morgan](https://www.npmjs.com/package/morgan) - HTTP request logger middleware for node.js
+- [passport](https://www.npmjs.com/package/passport) - Passport is Express-compatible authentication middleware for Node.js.
 
 ## Notes
 
