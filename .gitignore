@@ -25,4 +25,4 @@ yarn-error.log*
 
 app/src/styles/css/
 
-config/index.js
+.env

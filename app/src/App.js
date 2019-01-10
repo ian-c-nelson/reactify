@@ -1,41 +1,33 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import store from "./state";
 
+// Common Components
 import Navbar from "./components/common/Navbar";
+import ModalController from "./components/modals";
 
-import rootReducer from "./reducers";
+// Pages
+import Home from "./components/pages/Home";
+import Post from "./components/pages/Post";
+import AuthRoute from "./utils/AuthRoute";
 
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div>
-          <Navbar />
-          <Router>
+function App(props) {
+  return (
+    <Provider store={store}>
+        <Router>
+          <div>
+            <Navbar />
             <Switch>
-              <Route path="/" exact component={Hello} />
-              <Route path="/test" exact component={Test} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/documentation" component={AuthRoute(Post)} />
             </Switch>
-          </Router>
-        </div>
-      </Provider>
-    );
-  }
-}
-
-function Hello() {
-  return <p>Hello!</p>;
-}
-
-function Test() {
-  return <p>Test!</p>;
+            <ModalController />
+          </div>
+        </Router>
+    </Provider>
+  );
 }
 
 export default App;

@@ -1,3 +1,4 @@
+require("dotenv").config();
 // Express initialization
 const express = require("express");
 const app = express();
@@ -14,6 +15,7 @@ db(process.env.MONGODB_URI || "mongodb://localhost/test");
 // Express Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(require("morgan")("dev"));
 
 // Serve Static
 app.use(express.static("app/build"));
